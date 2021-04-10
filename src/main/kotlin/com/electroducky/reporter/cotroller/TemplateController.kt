@@ -31,7 +31,7 @@ class TemplateController(
     }
 
     @DeleteMapping("/{id}")
-    fun delete(id: String) {
+    fun delete(@PathVariable id: String) {
         return templateService.delete(id)
     }
 }

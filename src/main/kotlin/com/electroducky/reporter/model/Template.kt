@@ -4,8 +4,9 @@ import javax.persistence.*
 
 @Entity
 class Template(
-    @Id val templateId: String,
-    val template: String,
+    @Id
+    val templateId: String,
+    val templateText: String,
 
     @ElementCollection(fetch = FetchType.LAZY)
     @CollectionTable(name = "recipient", joinColumns = [JoinColumn(name = "template_id")])

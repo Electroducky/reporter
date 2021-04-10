@@ -1,7 +1,6 @@
 package com.electroducky.reporter.cotroller
 
-import com.electroducky.reporter.model.RawReport
-import com.electroducky.reporter.model.Report
+import com.electroducky.reporter.model.ReportParameters
 import com.electroducky.reporter.service.ReportService
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -15,7 +14,7 @@ class ReportController(
 ) {
 
     @PostMapping
-    fun send(@RequestBody rawReport: RawReport): Report {
-        return reportService.send(rawReport)
+    fun send(@RequestBody reportParameters: ReportParameters) {
+        reportService.send(reportParameters)
     }
 }
