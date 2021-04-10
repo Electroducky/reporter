@@ -1,6 +1,6 @@
 package com.electroducky.reporter.repository
 
-import com.electroducky.reporter.model.entity.Template
+import com.electroducky.reporter.model.Template
 import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 

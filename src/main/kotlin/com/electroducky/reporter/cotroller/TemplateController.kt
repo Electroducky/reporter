@@ -1,6 +1,6 @@
 package com.electroducky.reporter.cotroller
 
-import com.electroducky.reporter.model.entity.Template
+import com.electroducky.reporter.model.Template
 import com.electroducky.reporter.service.TemplateService
 import org.springframework.web.bind.annotation.*
 

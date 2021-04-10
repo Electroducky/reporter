@@ -1,8 +1,7 @@
 package com.electroducky.reporter.service
 
-import com.electroducky.reporter.model.entity.Template
+import com.electroducky.reporter.model.Template
 import com.electroducky.reporter.repository.TemplateRepository
-import org.springframework.data.repository.findByIdOrNull
 import org.springframework.stereotype.Service
 
 @Service
@@ -22,8 +21,8 @@ class TemplateService(
         templateRepository.deleteById(templateId)
     }
 
-    fun findById(templateId: String): Template? {
-        return templateRepository.findByIdOrNull(templateId)
+    fun findById(templateId: String): Template {
+        return templateRepository.findById(templateId).get()
     }
 
     fun findAll(): MutableIterable<Template> {
