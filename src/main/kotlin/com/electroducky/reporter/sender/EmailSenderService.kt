@@ -3,11 +3,13 @@ package com.electroducky.reporter.sender
 import com.electroducky.reporter.common.logger
 import com.electroducky.reporter.report.Report
 import org.springframework.beans.factory.annotation.Value
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.mail.SimpleMailMessage
 import org.springframework.mail.javamail.JavaMailSender
 import org.springframework.stereotype.Service
 
 @Service
+@ConditionalOnProperty("app.sender.mail.enabled")
 class EmailSenderService(
     private val emailSender: JavaMailSender,
     @Value("\${spring.mail.username}") private val mailUsername: String,
