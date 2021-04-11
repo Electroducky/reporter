@@ -3,7 +3,17 @@
     {
       "name": "app.mail.subject",
       "type": "java.lang.String",
-      "description": "Subject for mailed reports"
+      "description": "Subject for mailed reports."
+    },
+    {
+      "name": "app.template.openingSeparator",
+      "type": "java.lang.String",
+      "description": "Opening placeholder separator."
+    },
+    {
+      "name": "app.template.closingSeparator",
+      "type": "java.lang.String",
+      "description": "Closing placeholder separator."
     }
   ]
 }

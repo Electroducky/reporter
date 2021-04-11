@@ -13,7 +13,7 @@ class ReportService(
 ) {
     fun send(reportParameters: ReportParameters) {
         val template = templateService.findById(reportParameters.templateId)
-        val report = templateRendererService.render(reportParameters, template.templateText)
+        val report = templateRendererService.render(reportParameters.variables, template.templateText)
         dispatcherService.dispatch(report, template.recipients)
     }
 }
