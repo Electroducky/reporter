@@ -1,5 +1,6 @@
 package com.electroducky.reporter.sender
 
+import com.electroducky.reporter.common.logger
 import com.electroducky.reporter.report.Report
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.mail.SimpleMailMessage
@@ -12,17 +13,20 @@ class EmailSenderService(
     @Value("\${spring.mail.username}") private val mailUsername: String,
     @Value("\${app.mail.subject}") private val mailSubject: String
 ) : SenderService {
+    private val log = logger()
 
     override val type: String
         get() = "email"
 
     override fun send(report: Report, endpoint: String) {
+        log.info("Sending report email to $endpoint")
+
         val message = SimpleMailMessage()
         message.setFrom(mailUsername)
         message.setTo(endpoint)
         message.setSubject(mailSubject)
         message.setText(report.message)
 
-        emailSender.send(message);
+        emailSender.send(message)
     }
 }

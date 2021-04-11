@@ -1,5 +1,6 @@
 package com.electroducky.reporter.schedule
 
+import com.electroducky.reporter.common.logger
 import com.electroducky.reporter.report.ReportParameters
 import com.electroducky.reporter.report.ReportService
 import com.fasterxml.jackson.databind.ObjectMapper
@@ -16,6 +17,7 @@ class ScheduledReportService(
     private val reportService: ReportService,
     private val objectMapper: ObjectMapper
 ) {
+    private val log = logger()
 
     fun schedule(scheduledReportParameters: ScheduledReportParameters) {
         reportService.validateReportParameters(
@@ -29,10 +31,15 @@ class ScheduledReportService(
         val trigger = buildTrigger(scheduledReportParameters)
 
         scheduler.scheduleJob(jobDetail, trigger)
+        log.info(
+            "Scheduled report job ${scheduledReportParameters.name} by " +
+                    "${scheduledReportParameters.cronExpression} with report ${scheduledReportParameters.templateId}"
+        )
     }
 
     fun unschedule(scheduledReportName: String) {
         scheduler.deleteJob(JobKey.jobKey(scheduledReportName, schedulingGroup))
+        log.info("Unscheduled report job $scheduledReportName")
     }
 
     fun findAll(): List<ScheduledReportParameters> {
