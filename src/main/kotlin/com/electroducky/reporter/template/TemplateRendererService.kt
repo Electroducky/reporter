@@ -31,14 +31,22 @@ class TemplateRendererService(
             }
 
             val placeholder = template.substring(opening + 1, closing)
-            val (key, type) = placeholder.split(":").map { it.trim() }
+            val split = placeholder.trim().split(":").map { it.trim() }
+            if (split.isEmpty() || split.size > 2) {
+                throw IllegalStateException("Placeholder $placeholder definition is invalid")
+            }
 
+            val key = split[0]
             val value = reportParameters[key]
                 ?: throw IllegalStateException("Placeholder $placeholder is not provided to the template")
 
-            val validationResult = TemplateParameterType.valueOf(type).validate(value)
-            if (!validationResult) {
-                throw IllegalStateException("Parameter $placeholder type validation failed")
+            if (split.size == 2) {
+                val type = split[1]
+
+                val validationResult = TemplateParameterType.valueOf(type).validate(value)
+                if (!validationResult) {
+                    throw IllegalStateException("Placeholder $placeholder type validation failed for value $value")
+                }
             }
             builder.append(value)
 

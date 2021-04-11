@@ -5,13 +5,16 @@ import org.springframework.stereotype.Service
 @Service
 class TemplateService(
     private val templateRepository: TemplateRepository,
+    private val templateRendererService: TemplateRendererService
 ) {
 
     fun create(template: Template): Template {
+        templateRendererService.validateTemplate(template.templateText)
         return templateRepository.save(template)
     }
 
     fun update(template: Template): Template {
+        templateRendererService.validateTemplate(template.templateText)
         return templateRepository.save(template)
     }
 

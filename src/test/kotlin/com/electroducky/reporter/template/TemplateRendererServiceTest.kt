@@ -13,20 +13,20 @@ internal class TemplateRendererServiceTest {
 
         assertEquals(
             Report("fdghjk \$fd ghjkdfs 10 gjksd"),
-            rendererService.render(mapOf("hgjk" to "10"), "fdghjk \\\$fd ghjkdfs $ hgjk:int $ gjksd")
+            rendererService.render(mapOf("test" to "10"), "fdghjk \\\$fd ghjkdfs $ test:int $ gjksd")
         )
 
         assertEquals(
             Report("fdghjk \$fd ghjkdfs10gjksd"),
-            rendererService.render(mapOf("hgjk" to "10"), "fdghjk \\\$fd ghjkdfs$ hgjk:int \$gjksd")
+            rendererService.render(mapOf("test" to "10"), "fdghjk \\\$fd ghjkdfs$ test:int \$gjksd")
         )
 
         assertThrows<IllegalArgumentException> {
-            rendererService.render(mapOf("hgjk" to "10"), "fdghjk \\\$fd ghjkdfs$ hgjk:tryu \$gjksd")
+            rendererService.render(mapOf("test" to "10"), "fdghjk \\\$fd ghjkdfs$ test:tryu \$gjksd")
         }
 
         assertThrows<IllegalStateException> {
-            rendererService.render(mapOf("hgjk" to "dgfhdgfh"), "fdghjk \\\$fd ghjkdfs$ hgjk:int \$gjksd")
+            rendererService.render(mapOf("test" to "dgfhdgfh"), "fdghjk \\\$fd ghjkdfs$ test:int \$gjksd")
         }
 
     }

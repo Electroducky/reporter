@@ -1,5 +1,7 @@
 package com.electroducky.reporter.schedule
 
+import com.electroducky.reporter.report.ReportParameters
+import com.electroducky.reporter.report.ReportService
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import org.quartz.*
@@ -11,10 +13,18 @@ import org.springframework.stereotype.Service
 @Service
 class ScheduledReportService(
     private val scheduler: Scheduler,
+    private val reportService: ReportService,
     private val objectMapper: ObjectMapper
 ) {
 
     fun schedule(scheduledReportParameters: ScheduledReportParameters) {
+        reportService.validateReportParameters(
+            ReportParameters(
+                scheduledReportParameters.templateId,
+                scheduledReportParameters.variables
+            )
+        )
+
         val jobDetail = buildJobDetail(scheduledReportParameters)
         val trigger = buildTrigger(scheduledReportParameters)
 
