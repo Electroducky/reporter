@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "app.mail.subject",
+      "type": "java.lang.String",
+      "description": "Subject for mailed reports"
+    }
+  ]
+}

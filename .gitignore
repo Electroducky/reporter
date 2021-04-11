@@ -38,3 +38,6 @@ out/
 
 ### H2 DB files ###
 data/
+
+### Secrets ###
+secret-application.properties
