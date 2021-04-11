@@ -1,35 +1,29 @@
 package com.electroducky.reporter.template
 
-import org.springframework.web.bind.annotation.*
+import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("/api/v1/template")
 class TemplateController(
     private val templateService: TemplateService
-) {
+) : TemplateMapping {
 
-    @GetMapping("/{id}")
-    fun get(@PathVariable id: String): Template? {
+    override fun get(id: String): Template? {
         return templateService.findById(id)
     }
 
-    @GetMapping
-    fun getAll(): MutableIterable<Template> {
+    override fun getAll(): MutableIterable<Template> {
         return templateService.findAll()
     }
 
-    @PostMapping
-    fun create(@RequestBody template: Template): Template {
+    override fun create(template: Template): Template {
         return templateService.create(template)
     }
 
-    @PutMapping
-    fun update(@RequestBody template: Template): Template {
+    override fun update(template: Template): Template {
         return templateService.update(template)
     }
 
-    @DeleteMapping("/{id}")
-    fun delete(@PathVariable id: String) {
+    override fun delete(id: String) {
         return templateService.delete(id)
     }
 }
