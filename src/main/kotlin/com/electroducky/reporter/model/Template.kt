@@ -8,7 +8,7 @@ class Template(
     val templateId: String,
     val templateText: String,
 
-    @ElementCollection(fetch = FetchType.LAZY)
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "recipient", joinColumns = [JoinColumn(name = "template_id")])
     val recipients: List<Recipient>
 )
