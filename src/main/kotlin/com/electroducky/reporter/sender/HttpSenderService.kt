@@ -1,7 +1,6 @@
-package com.electroducky.reporter.service.sender
+package com.electroducky.reporter.sender
 
-import com.electroducky.reporter.model.Report
-import com.electroducky.reporter.service.SenderService
+import com.electroducky.reporter.report.Report
 import org.springframework.stereotype.Service
 import org.springframework.web.reactive.function.client.WebClient
 import reactor.core.publisher.Mono

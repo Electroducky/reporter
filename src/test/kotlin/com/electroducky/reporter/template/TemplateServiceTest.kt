@@ -1,4 +1,4 @@
-package com.electroducky.reporter.service
+package com.electroducky.reporter.template
 
 import org.junit.jupiter.api.Test
 

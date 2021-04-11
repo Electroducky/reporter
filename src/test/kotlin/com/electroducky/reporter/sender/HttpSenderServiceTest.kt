@@ -1,7 +1,6 @@
-package com.electroducky.reporter.service.sender
+package com.electroducky.reporter.sender
 
-import com.electroducky.reporter.config.WebClientConfig
-import com.electroducky.reporter.model.Report
+import com.electroducky.reporter.report.Report
 import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired

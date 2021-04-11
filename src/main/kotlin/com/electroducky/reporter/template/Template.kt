@@ -1,5 +1,6 @@
-package com.electroducky.reporter.model
+package com.electroducky.reporter.template
 
+import com.electroducky.reporter.sender.Recipient
 import javax.persistence.*
 
 @Entity

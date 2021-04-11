@@ -1,4 +1,4 @@
-package com.electroducky.reporter.model
+package com.electroducky.reporter.sender
 
 import javax.persistence.Embeddable
 

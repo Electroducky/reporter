@@ -1,7 +1,6 @@
-package com.electroducky.reporter.service
+package com.electroducky.reporter.sender
 
-import com.electroducky.reporter.model.Recipient
-import com.electroducky.reporter.model.Report
+import com.electroducky.reporter.report.Report
 import com.electroducky.reporter.utils.anyNonNull
 import org.junit.jupiter.api.Test
 import org.mockito.Mockito.*

@@ -1,7 +1,6 @@
-package com.electroducky.reporter.service.sender
+package com.electroducky.reporter.sender
 
-import com.electroducky.reporter.model.Report
-import com.electroducky.reporter.service.SenderService
+import com.electroducky.reporter.report.Report
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.mail.SimpleMailMessage
 import org.springframework.mail.javamail.JavaMailSender

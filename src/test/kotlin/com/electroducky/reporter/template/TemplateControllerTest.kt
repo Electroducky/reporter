@@ -1,8 +1,6 @@
-package com.electroducky.reporter.cotroller
+package com.electroducky.reporter.template
 
-import com.electroducky.reporter.model.Recipient
-import com.electroducky.reporter.model.Template
-import com.electroducky.reporter.service.TemplateService
+import com.electroducky.reporter.sender.Recipient
 import com.electroducky.reporter.utils.anyNonNull
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.api.BeforeEach

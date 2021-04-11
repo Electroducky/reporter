@@ -1,7 +1,5 @@
-package com.electroducky.reporter.cotroller
+package com.electroducky.reporter.report
 
-import com.electroducky.reporter.model.ReportParameters
-import com.electroducky.reporter.service.ReportService
 import com.electroducky.reporter.utils.anyNonNull
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.api.Test

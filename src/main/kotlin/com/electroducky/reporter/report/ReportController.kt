@@ -1,7 +1,5 @@
-package com.electroducky.reporter.cotroller
+package com.electroducky.reporter.report
 
-import com.electroducky.reporter.model.ReportParameters
-import com.electroducky.reporter.service.ReportService
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping

@@ -1,6 +1,6 @@
-package com.electroducky.reporter.service
+package com.electroducky.reporter.sender
 
-import com.electroducky.reporter.model.Report
+import com.electroducky.reporter.report.Report
 
 interface SenderService {
     val type: String

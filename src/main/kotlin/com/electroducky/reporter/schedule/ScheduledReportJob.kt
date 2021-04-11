@@ -1,7 +1,7 @@
 package com.electroducky.reporter.schedule
 
-import com.electroducky.reporter.model.ReportParameters
-import com.electroducky.reporter.service.ReportService
+import com.electroducky.reporter.report.ReportParameters
+import com.electroducky.reporter.report.ReportService
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
 import org.quartz.Job

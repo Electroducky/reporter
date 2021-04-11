@@ -1,6 +1,8 @@
-package com.electroducky.reporter.service
+package com.electroducky.reporter.report
 
-import com.electroducky.reporter.model.ReportParameters
+import com.electroducky.reporter.sender.DispatcherService
+import com.electroducky.reporter.template.TemplateRendererService
+import com.electroducky.reporter.template.TemplateService
 import org.springframework.stereotype.Service
 
 @Service

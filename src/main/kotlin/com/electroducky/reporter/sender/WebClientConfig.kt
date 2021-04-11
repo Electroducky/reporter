@@ -1,4 +1,4 @@
-package com.electroducky.reporter.config
+package com.electroducky.reporter.sender
 
 import io.netty.channel.ChannelOption
 import io.netty.handler.timeout.ReadTimeoutHandler
