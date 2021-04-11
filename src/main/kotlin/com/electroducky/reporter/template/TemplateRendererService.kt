@@ -69,7 +69,13 @@ class TemplateRendererService(
             }
 
             val placeholder = template.substring(opening + 1, closing)
-            TemplateParameterType.valueOf(placeholder.split(":")[1].trim())
+            val split = placeholder.trim().split(":").map { it.trim() }
+            if (split.isEmpty() || split.size > 2) {
+                throw IllegalStateException("Placeholder $placeholder definition is invalid")
+            }
+            if (split.size == 2) {
+                TemplateParameterType.valueOf(split[1].trim())
+            }
 
             lastProcessedPointer = closing + 1
         }
