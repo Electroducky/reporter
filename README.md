@@ -99,7 +99,7 @@ In `variables` specify keys of the variables and their values.
 
 ### Scheduled report parameters
 
-ScheduledReportParameters body example:
+Scheduled report parameters body example:
 
 ```
 {
@@ -115,7 +115,7 @@ How to work with this can be found in the
 [official guide](http://www.quartz-scheduler.org/documentation/quartz-2.3.0/tutorials/crontrigger).
 In the example above, report will be sent every minute at 0 seconds.
 
-#### API for scheduled report bb
+#### API for scheduled report parameters
 
 `GET localhost:8080/api/v1/shceduledreport/{name}` - get by name
 
